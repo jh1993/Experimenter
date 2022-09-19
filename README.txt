@@ -1,3 +1,5 @@
+PLEASE CHECK THE DISCORD THREAD FOR UPDATE NOTICES, AND RE-DOWNLOAD THE MOD WHENEVER THERE'S AN UPDATE.
+
 This mod requires API_Universal, which can be found here: https://discord.com/channels/645130221435092992/994785352793473104
 
 To install this mod, click on the green "Code" button on this page, then "Download ZIP". Please rename the "Experimenter-main" folder to "Experimenter" before putting it into your mods folder.
