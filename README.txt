@@ -6,6 +6,9 @@ To install this mod, click on the green "Code" button on this page, then "Downlo
 
 This mod adds a new gameplay mode, Experimenter, implemented as archmage trials. It is meant to allow you to experiment with certain spell and shrine combinations without having to struggle with the hardest parts of very early game. You will be able to, for instance, make the very questionable decision of starting with a level 7 spell and no cantrips, and similar shenanigans.
 
+My Bugfixes mod is recommended to make the trial descriptions display properly instead of being cut off at the bottom of the screen.
+https://github.com/jh1993/BugsAndScams
+
 There are three variants of Experimenter, with increasing levels of degeneracy.
 
 1. Experimenter: The most basic version. The first two realms contain no enemies, allowing you to forego having to take a cantrip or anything else for very early game survival. Realm 2 always contains a circle, allowing you to use up to 7 SP to buy a single tag of spells and skills at a discount. Realm 3 always contains a shrine, allowing you to experiment with certain spell and shrine combinations that you otherwise may not have the chance to experience. However, it's still up to RNG what circles and shrines you get.

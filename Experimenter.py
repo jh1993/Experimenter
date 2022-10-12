@@ -56,7 +56,8 @@ class Experimenter3(Mutators.Mutator):
         Mutators.Mutator.__init__(self)
         self.description = ("You start with 10 SP and an extra Dragon Horn\n"
                             "Realms 1 and 2 contain no enemies, gates, items, or SP\n"
-                            "Realm 1 contains one rift for each circle and realm 2 contains one rift for each shrine")
+                            "Realm 1 contains one rift for each circle\n"
+                            "Realm 2 contains one rift for each shrine")
         self.all_valid = SpellAPI.primary_shrine_option + SpellAPI.secondary_shrine_option + SpellAPI.tertiary_shrine_option
     
     def on_levelgen_pre(self, levelgen):
