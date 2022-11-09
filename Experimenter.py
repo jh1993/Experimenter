@@ -1,5 +1,8 @@
 import Mutators, Shrines, Level, Consumables
-import mods.API_Universal.APIs.API_Spells.API_Spells as SpellAPI
+
+primary_shrine_option = [Level.Tags.Fire, Level.Tags.Lightning, Level.Tags.Dark, Level.Tags.Arcane, Level.Tags.Nature, Level.Tags.Holy, Level.Tags.Ice]
+secondary_shrine_option = [Level.Tags.Sorcery, Level.Tags.Enchantment, Level.Tags.Conjuration]
+tertiary_shrine_option = [Level.Tags.Word, Level.Tags.Dragon, Level.Tags.Translocation, Level.Tags.Eye, Level.Tags.Chaos, Level.Tags.Orb, Level.Tags.Metallic]
 
 class Experimenter1(Mutators.Mutator):
 
@@ -8,7 +11,7 @@ class Experimenter1(Mutators.Mutator):
         self.description = ("Realms 1 and 2 contain no enemies or gates\n"
                             "Realm 2 always contains a circle\n"
                             "Realm 3 always contains a shrine")
-        self.all_valid = SpellAPI.primary_shrine_option + SpellAPI.secondary_shrine_option + SpellAPI.tertiary_shrine_option
+        self.all_valid = primary_shrine_option + secondary_shrine_option + tertiary_shrine_option
     
     def on_levelgen_pre(self, levelgen):
         if levelgen.difficulty <= 2:
@@ -27,7 +30,7 @@ class Experimenter2(Mutators.Mutator):
         self.description = ("Realms 1 and 2 contain no enemies or gates\n"
                             "Realm 1 contains one rift for each circle\n"
                             "Realm 2 contains one rift for each shrine\n")
-        self.all_valid = SpellAPI.primary_shrine_option + SpellAPI.secondary_shrine_option + SpellAPI.tertiary_shrine_option
+        self.all_valid = primary_shrine_option + secondary_shrine_option + tertiary_shrine_option
     
     def on_levelgen_pre(self, levelgen):
         if levelgen.difficulty <= 2:
@@ -58,7 +61,7 @@ class Experimenter3(Mutators.Mutator):
                             "Realms 1 and 2 contain no enemies, gates, items, or SP\n"
                             "Realm 1 contains one rift for each circle\n"
                             "Realm 2 contains one rift for each shrine")
-        self.all_valid = SpellAPI.primary_shrine_option + SpellAPI.secondary_shrine_option + SpellAPI.tertiary_shrine_option
+        self.all_valid = primary_shrine_option + secondary_shrine_option + tertiary_shrine_option
     
     def on_levelgen_pre(self, levelgen):
         if levelgen.difficulty <= 2:
