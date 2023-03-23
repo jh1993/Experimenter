@@ -2,15 +2,23 @@ PLEASE CHECK THE DISCORD THREAD FOR UPDATE NOTICES, AND RE-DOWNLOAD THE MOD WHEN
 
 To install this mod, click on the green "Code" button on this page, then "Download ZIP". Please rename the "Experimenter-main" folder to "Experimenter" before putting it into your mods folder.
 
-This mod adds a new gameplay mode, Experimenter, implemented as archmage trials. It is meant to allow you to experiment with certain spell and shrine combinations without having to struggle with the hardest parts of very early game. You will be able to, for instance, make the very questionable decision of starting with a level 7 spell and no cantrips, and similar shenanigans.
+This mod requires AAA_Loader by Bord Listian: https://github.com/DaedalusGame/AAA_Loader
+Visit the above link and install it the same way you install this mod, except that you rename the "AAA_Loader-master" folder to "AAA_Loader" before putting it into the mods folder.
 
-My Bugfixes mod is recommended to make the trial descriptions display properly instead of being cut off at the bottom of the screen.
-https://github.com/jh1993/BugsAndScams
+This mod may be partially incompatible with API_Universal until I make my own fork of it to work out the incompatibilities, which may be an annoying and tedious task so it may take a while. Until then, use API_Universal at your own risk.
 
-There are three variants of Experimenter, with increasing levels of degeneracy.
+This mod adds several new options to the options menu, which take effect whenever you start a new run. They are meant to allow you to experiment with certain spell and shrine combinations without having to struggle with the hardest parts of very early game. You will be able to, for instance, make the very questionable decision of starting with a level 7 spell and no cantrips, and similar shenanigans.
 
-1. Experimenter: The most basic version. The first two realms contain no enemies, allowing you to forego having to take a cantrip or anything else for very early game survival. Realm 2 always contains a circle, allowing you to use up to 7 SP to buy a single tag of spells and skills at a discount. Realm 3 always contains a shrine, allowing you to experiment with certain spell and shrine combinations that you otherwise may not have the chance to experience. However, it's still up to RNG what circles and shrines you get.
+Changing the new options in the middle of a run has no effect on your current run, but will affect your next run as normal. They can be freely combined with any archmage trial.
 
-2. Experimenter Ultimate: The much more degenerate version, which eliminates RNG almost entirely by making sure realm 1 contains a rift for every circle, and realm 2 contains a rift for every shrine. This is like level 1, except you can choose exactly which circle and shrine you want. The only RNG involves the items that you get on realm 2.
+The options are detailed below.
 
-3. Experimenter Unhinged: The version with close to maximum possible degeneracy. Realms 1 and 2 contain no items or SP, but you instead start with 10 SP. This simulates the possibility that you're lucky enough to find a Draught of Memories on realm 2, and were able to grab all 3 SP orbs on the level within the duration without needing to use your starting Teleporter. On top of that, you also start with an extra Dragon Horn, as if you also found it on realm 2, allowing you to skip any of the next few realms at your leisure. Aside from eliminating the need to start with a cantrip to clear realm 1, this is still theoretically within the realm of possibility for the exorbitantly lucky, which should hopefully alleviate some of the guilt that you may be considered blatantly cheating by playing on this mode.
+Starting Circle: A circle of the chosen tag will be placed on the same tile as your character when you start the run.
+
+Starting Shrine: A special buff will be applied to your character when you start the run, containing the chosen shrine. The first spell you gain that is eligible for that shrine will have the shrine applied to it.
+
+Lucky Start: You start with a Dragon Horn and 1 additional SP per SP orb on realm 1. This simulates the possibility that you're lucky enough to find a Dragon Horn and a Draught of Memories on realm 2, and were able to grab all SP orbs on the level within the duration without needing to use your starting Teleporter.
+
+Easy Start: You start with all SP on realm 1 already collected, and all enemies dead.
+
+If you set starting circle and shrine to none, and lucky and easy start to off, your run will be the same as an unmodded run.
