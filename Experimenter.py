@@ -9,10 +9,6 @@ curr_module = sys.modules[__name__]
 
 circles = [None, Tags.Arcane, Tags.Chaos, Tags.Conjuration, Tags.Dark, Tags.Dragon, Tags.Enchantment, Tags.Eye, Tags.Fire, Tags.Holy, Tags.Ice, Tags.Lightning, Tags.Metallic, Tags.Nature, Tags.Orb, Tags.Sorcery, Tags.Translocation, Tags.Word]
 
-shrines = [s[0]() for s in new_shrines]
-shrines.sort(key=lambda s: s.name)
-shrines.insert(0, None)
-
 OPTION_STARTING_CIRCLE = 8
 OPTION_STARTING_SHRINE = 9
 OPTION_LUCKY_START = 10
@@ -64,6 +60,10 @@ def modify_class(cls):
                 self.options["lucky_start"] = False
             if "easy_start" not in self.options:
                 self.options["easy_start"] = False
+            
+            self.shrines = [s[0]() for s in new_shrines]
+            self.shrines.sort(key=lambda s: s.name)
+            self.shrines.insert(0, None)
 
             self.rebinding = False
             self.key_binds = dict(default_key_binds)
@@ -353,7 +353,7 @@ def modify_class(cls):
             if self.options["starting_shrine"] == 0:
                 shrine_fmt = "None"
             else:
-                shrine_fmt = shrines[self.options["starting_shrine"]].name
+                shrine_fmt = self.shrines[self.options["starting_shrine"]].name
             self.draw_string("Starting Shrine: %s" % shrine_fmt, self.screen, cur_x, cur_y, mouse_content=OPTION_STARTING_SHRINE)
             cur_y += self.linesize
 
@@ -412,7 +412,7 @@ def modify_class(cls):
                     if self.examine_target == OPTION_STARTING_CIRCLE:
                         self.options["starting_circle"] = (self.options["starting_circle"] - 1) % len(circles)
                     if self.examine_target == OPTION_STARTING_SHRINE:
-                        self.options["starting_shrine"] = (self.options["starting_shrine"] - 1) % len(shrines)
+                        self.options["starting_shrine"] = (self.options["starting_shrine"] - 1) % len(self.shrines)
                     if self.examine_target == OPTION_LUCKY_START:
                         self.options["lucky_start"] = not self.options["lucky_start"]
                     if self.examine_target == OPTION_EASY_START:
@@ -431,7 +431,7 @@ def modify_class(cls):
                     if self.examine_target == OPTION_STARTING_CIRCLE:
                         self.options["starting_circle"] = (self.options["starting_circle"] + 1) % len(circles)
                     if self.examine_target == OPTION_STARTING_SHRINE:
-                        self.options["starting_shrine"] = (self.options["starting_shrine"] + 1) % len(shrines)
+                        self.options["starting_shrine"] = (self.options["starting_shrine"] + 1) % len(self.shrines)
                     if self.examine_target == OPTION_LUCKY_START:
                         self.options["lucky_start"] = not self.options["lucky_start"]
                     if self.examine_target == OPTION_EASY_START:
@@ -458,7 +458,7 @@ def modify_class(cls):
                     elif self.examine_target == OPTION_STARTING_CIRCLE:
                         self.options["starting_circle"] = (self.options["starting_circle"] + 1) % len(circles)
                     elif self.examine_target == OPTION_STARTING_SHRINE:
-                        self.options["starting_shrine"] = (self.options["starting_shrine"] + 1) % len(shrines)
+                        self.options["starting_shrine"] = (self.options["starting_shrine"] + 1) % len(self.shrines)
                     elif self.examine_target == OPTION_LUCKY_START:
                         self.options["lucky_start"] = not self.options["lucky_start"]
                     elif self.examine_target == OPTION_EASY_START:
@@ -511,7 +511,7 @@ def modify_class(cls):
                                 self.options['starting_circle'] = (self.options['starting_circle'] + 1) % len(circles)
                                 break
                             elif self.examine_target == OPTION_STARTING_SHRINE:
-                                self.options['starting_shrine'] = (self.options['starting_shrine'] + 1) % len(shrines)
+                                self.options['starting_shrine'] = (self.options['starting_shrine'] + 1) % len(self.shrines)
                                 break
                             elif self.examine_target == OPTION_LUCKY_START:
                                 self.options["lucky_start"] = not self.options["lucky_start"]
@@ -535,7 +535,7 @@ def modify_class(cls):
                                 self.options['starting_circle'] = (self.options['starting_circle'] - 1) % len(circles)
                                 break
                             elif self.examine_target == OPTION_STARTING_SHRINE:
-                                self.options['starting_shrine'] = (self.options['starting_shrine'] - 1) % len(shrines)
+                                self.options['starting_shrine'] = (self.options['starting_shrine'] - 1) % len(self.shrines)
                                 break
                             elif self.examine_target == OPTION_LUCKY_START:
                                 self.options["lucky_start"] = not self.options["lucky_start"]
@@ -638,7 +638,7 @@ def modify_class(cls):
                     self.cur_level.add_prop(circle, self.p1.x, self.p1.y)
                     circle.on_player_enter(self.p1)
 
-            shrine = shrines[view.options["starting_shrine"]]
+            shrine = view.shrines[view.options["starting_shrine"]]
             if shrine:
                 self.p1.apply_buff(StartingShrineBuff(type(shrine)()))
 
