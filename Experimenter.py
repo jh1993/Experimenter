@@ -350,6 +350,8 @@ def modify_class(cls):
             self.draw_string("Starting Circle: %s" % circle_fmt, self.screen, cur_x, cur_y, mouse_content=OPTION_STARTING_CIRCLE)
             cur_y += self.linesize
 
+            if self.options["starting_shrine"] >= len(self.shrines):
+                self.options["starting_shrine"] = 0
             if self.options["starting_shrine"] == 0:
                 shrine_fmt = "None"
             else:
@@ -638,6 +640,8 @@ def modify_class(cls):
                     self.cur_level.add_prop(circle, self.p1.x, self.p1.y)
                     circle.on_player_enter(self.p1)
 
+            if view.options["starting_shrine"] >= len(view.shrines):
+                view.options["starting_shrine"] = 0
             shrine = view.shrines[view.options["starting_shrine"]]
             if shrine:
                 self.p1.apply_buff(StartingShrineBuff(type(shrine)()))
